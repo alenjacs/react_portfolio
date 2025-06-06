@@ -108,7 +108,7 @@ export const Banner = () => {
           </Row>
         </Container>
       </section>
-      <Loader type="pacman" />
+      {/* <Loader type="pacman" /> */}
 
     </>
   )
