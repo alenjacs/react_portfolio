@@ -29,6 +29,7 @@ High-contrast (black/orange) developer portfolio built with React.
 
 ### Installation
 git clone[ https://github.com/<your-username>/<your-repo>.git](https://github.com/alenjacs/react_portfolio.git)
+
 cd react_portfolio
 
 npm install
