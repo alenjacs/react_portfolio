@@ -1,101 +1,78 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import 'animate.css';
-import Loader from 'react-loaders'
-import TrackVisibility from 'react-on-screen';
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
-
-  
-  // Array of project objects
-  const projects = [
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-  ];
-
   return (
     <section className="project" id="projects">
       <Container>
         <Row>
-          <Col size={12}>
+          <Col xs={12}>
             <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+              {({ isVisible }) => (
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <h2>Projects</h2>
+                  <p>Selected work in web engineering and data science.</p>
+
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                      id="pills-tab"
+                    >
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">Projects</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">Work in progress</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+
+                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                      <Tab.Pane eventKey="first">
+                        {/* Center the two cols under the tabs */}
+                        <Row className="g-4 justify-content-center text-center">
+                          <Col xs={12} md={6} lg={5} className="d-flex">
+                            <a
+                              href="https://github.com/alenjacs/fraud_detection"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="proj-card text-only w-100"
+                              aria-label="Open Fraud Detection project on GitHub"
+                            >
+                              <h4>Fraud Detection</h4>
+                              <p>EDA • Streamlit • ML baseline</p>
+                            </a>
+                          </Col>
+                          <Col xs={12} md={6} lg={5} className="d-flex">
+                            <a
+                              href="https://github.com/khanshairer/GR05-DocuBox-2025-Intersession/blob/main/README.md"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="proj-card text-only w-100"
+                              aria-label="Open DocuBox project README"
+                            >
+                              <h4>DocuBox</h4>
+                              <p>Docs manager • Firebase • Encryption</p>
+                            </a>
+                          </Col>
+                        </Row>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="second">
+                        <p>Work in progress.</p>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+
+      <img className="background-image-right" src={colorSharp2} alt="decorative background" />
     </section>
-  )
-}
+  );
+};
