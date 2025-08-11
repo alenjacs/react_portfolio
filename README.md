@@ -28,18 +28,12 @@ High-contrast (black/orange) developer portfolio built with React.
 - npm 9+
 
 ### Installation
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone[ https://github.com/<your-username>/<your-repo>.git](https://github.com/alenjacs/react_portfolio.git)
+cd react_portfolio
+
 npm install
 
-### Environment Variables
-Create a `.env` file in the project root (CRA uses the REACT_APP_ prefix):
 
-REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
-REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-REACT_APP_CONTACT_TO_EMAIL=alenjacs@gmail.com
-REACT_APP_CONTACT_TO_NAME=Alen Jacob
 
 EmailJS keys: Dashboard → Account → API Keys (Public Key) and Email Services/Templates for IDs.
 
